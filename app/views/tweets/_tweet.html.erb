@@ -14,15 +14,8 @@
       <%= tweet.text %>
      </div>
      <div class="my-1">
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          edit
-        </button>
-        <div class="dropdown-menu text-center">
           <a class="dropdown-item"><%= link_to "edit", edit_tweet_path(tweet) %> </a>
           <a class="dropdown-item"><%= link_to "delete", tweet_path(tweet), method: :delete %> </a>
-        </div>
-      </div>
      </div>
  </div>
  

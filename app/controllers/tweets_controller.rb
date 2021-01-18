@@ -6,13 +6,14 @@
     end
   
     def new
+      # @tweet = Tweet.new
       @tweet = Tweet.new
     end
   
     def create
-         @tweet = Tweet.new(tweet_params)
+         @tweet = Tweet.new(tweet_tag_params)
       if @tweet.save
-         redirect_to root_path 
+         redirect_to root_path   
       else
          render :new
       end
@@ -49,8 +50,8 @@
     end
   
     private
-    def tweet_params
-      params.require(:tweet).permit(:title, :text,:image ).merge(user_id: current_user.id)
+    def tweet_tag_params
+      params.require(:tweet).permit(:title, :text, :image, ).merge(user_id: current_user.id)
     end
   
     def move_to_index

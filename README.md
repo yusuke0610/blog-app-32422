@@ -47,6 +47,7 @@
   # association
   - belongs_to :user
   - has_many :comments
+  - has_many :tweet_tag_relations
 
   # comments
 
@@ -59,6 +60,7 @@
   # association
   - belongs_to :user
   - belongs_to :tweet
+
 
 ## ローカルでの動作方法
 
