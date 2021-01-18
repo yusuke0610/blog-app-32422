@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <% if user_signed_in? %>
+  <h1><%= link_to "Blog",new_tweet_path %></h1>
+  <% else %>
+  <h1><%= link_to "Blog",root_path %></h1>
+  <% end %>
+
+  <div class="form-inline my-2 my-lg-0">
+   <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%= f.text_field :keyword , placeholder: "Search",class: "form-control" %>
+      <%= f.submit "Search", class: "btn btn-outline-success" %>
+   <% end %>
+  </div>
+
+  <ul class="navbar-nav">
+   <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    sign
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% if user_signed_in? %>
+    <div class="text-center">
+    <%= link_to current_user.name,user_path(current_user.id) %>
+    </div>
+    <div class=text-center>
+    <%= link_to "log_out", destroy_user_session_path, method: :delete %>
+    </div>
+    <% else %>
+    <div class="text-center">
+    <%= link_to "sign_up", new_user_registration_path %>
+    </div>
+    <div class="text-center">
+    <%= link_to "sign_in", new_user_session_path %>
+    </div>
+    <% end %>
+  </div>
+</div>
+  </ul>
+</nav>
+
+
+
