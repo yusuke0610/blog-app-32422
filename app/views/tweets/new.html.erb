@@ -5,14 +5,8 @@
      <div class="col-6">
       <%= form_with model: @tweet, url: tweets_path, local: true do |f| %> 
       <%= render "shared/error_messages", model:f.object %>
-       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         image
-        </button>
-       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+       <div>
         <%= f.file_field :image, class:"form-control", style:"border:0;" %>
-       </div>
-       </div>
        <div class="form-group py-5">
         <%= f.text_field :title, class:"form-control", placeholder: "title", type:"title", style:"border:0;" %>
        </div>
@@ -23,6 +17,7 @@
          <%= f.submit "投稿", class:"btn btn-primary" %>
         </div>
        <% end %>
+     </div>
      </div>
      <div class="col-3">
      </div>
