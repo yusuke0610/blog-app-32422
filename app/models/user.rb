@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
   devise :omniauthable, :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :trackable, :validatable
+         :rememberable, :validatable
   has_many :sns_credentials, dependent: :destroy
          has_many :tweets
          has_many :comments
@@ -37,7 +37,7 @@ class User < ApplicationRecord
           user = User.where(id: snscredential.user_id).first
           unless user.present?
             user = User.new(
-              nickname: auth.info.name,
+              name: auth.info.name,
               email: auth.info.email,
             )
           end
