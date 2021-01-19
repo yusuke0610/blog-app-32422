@@ -17,9 +17,15 @@
      <div class="text-center">
        <%= f.submit "Sign_in" ,class:"btn btn-primary" %>
      </div>
+    <div class="text-center"> 
+    <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+      <%= render "devise/shared/links" %>
+    <% end %>
+    </div>
    <% end %>
    </div>
  </div>
  <div class="col-3">
+ </div>
  </div>
 </div>
