@@ -1,25 +1,53 @@
 <%= render "shared/header" %>
-<div class="row py-2">
-<div class="col-3">
-</div>
-<div class="col-6">
- <div class="text-center">
-  <%= image_tag @tweet.image.variant(resize: '300x500') if @tweet.image.attached? %>
- </div>
- <div class="text-center my-3">
-  <h3><%= @tweet.title%></h3>
- </div>
- <div class="text-center">
-  <%= @tweet.text %>
- </div>
- <div class="py-4 my-4">
-  <%= link_to user_path(@tweet.user.id) do %>
-  <div class="text-center">
-  <b><%= @tweet.user.name %><b>
+ <div class="row py-2">
+  <div class="col-3">
   </div>
-  <% end %>
- </div>
- </div>
- <div class="col-3">
- </div>
+
+  <div class="col-6">
+   <div class="text-center">
+    <%= image_tag @tweet.image.variant(resize: '300x500') if @tweet.image.attached? %>
+   </div>
+   <div class="text-center my-3">
+    <h3><%= @tweet.title%></h3>
+   </div>
+   <div class="text-center">
+    <%= @tweet.text %>
+   </div>
+   <div class="py-4 my-4">
+     <%= link_to user_path(@tweet.user.id) do %>
+      <% if @tweet.user %>
+       <div class="text-center">
+       <b><%= @tweet.user.name %><b>
+       </div>
+      <% else %>
+       <b><%= @tweet.user.name %><b>
+      <% end %>
+     <% end %>
+   </div>
+
+   <div class="text-center">
+    <ul>
+      <% @comments.each do |comment| %>
+        <li class="list-group py-2">
+         <%= comment.comment %>
+        </li>
+        <li class="list-group">
+         <%= comment.comment.name %>
+        </li>
+      <% end %>
+    </ul>
+   </div>
+   <div>
+    <%= form_with model: [@tweet,@comment], local: true do |f| %> 
+      <%# <%= render "shared/error_messages", model:f.object %>
+      <%= f.text_area :comment, class:"form-control", placeholder: "comment", type:"comment", row:"4",maxlemgth:"120", style:"border:0;" %>
+     <div class="text-center py-1">
+      <%= f.submit "comment", class:"btn btn-primary" %>
+     </div>
+   <% end %>
+  </div>
+  </div>
+
+  <div class="col-3">
+  </div>
  </div>
