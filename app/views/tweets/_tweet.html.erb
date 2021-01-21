@@ -10,9 +10,6 @@
      <div class="my-1">
       <%= link_to tweet.title, tweet_path(tweet) %>
      </div>
-     <div classs="my-1">
-      <%= tweet.text %>
-     </div>
      <div class="my-1">
           <a class="dropdown-item"><%= link_to "edit", edit_tweet_path(tweet) %> </a>
           <a class="dropdown-item"><%= link_to "delete", tweet_path(tweet), method: :delete %> </a>

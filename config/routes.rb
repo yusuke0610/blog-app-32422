@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   }
 
   root to: "tweets#index"
+  
   resources :users
   resources :tweets do
-    
-  collection do
+    resources :comments
+    collection do
     get 'search'
   end
   end

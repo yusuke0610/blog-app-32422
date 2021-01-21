@@ -2,6 +2,7 @@ class User < ApplicationRecord
 
   devise :omniauthable, :database_authenticatable, :registerable, :recoverable,
          :rememberable, :validatable
+         
   has_many :sns_credentials, dependent: :destroy
          has_many :tweets
          has_many :comments

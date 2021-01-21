@@ -1,17 +1,15 @@
-
-  class TweetsController < ApplicationController
+class TweetsController < ApplicationController
     before_action :move_to_index, except: [:index,:search]
     def index
       @tweets = Tweet.includes(:user).order("created_at DESC")
     end
   
     def new
-      # @tweet = Tweet.new
       @tweet = Tweet.new
     end
   
     def create
-         @tweet = Tweet.new(tweet_tag_params)
+         @tweet = Tweet.new(tweet_params)
       if @tweet.save
          redirect_to root_path   
       else
@@ -21,6 +19,8 @@
   
     def show
       @tweet = Tweet.find(params[:id])
+      @comment = Comment.new
+      @comments = @tweet.comments
     end
     
     def destroy
@@ -50,7 +50,7 @@
     end
   
     private
-    def tweet_tag_params
+    def tweet_params
       params.require(:tweet).permit(:title, :text, :image, ).merge(user_id: current_user.id)
     end
   
