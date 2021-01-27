@@ -1,3 +1,7 @@
+body{
+  background-image: url("XPs.jpg");
+  background-size: cover;
+}
 .border-bottom{
   border-bottom: solid 1px black;
 }
