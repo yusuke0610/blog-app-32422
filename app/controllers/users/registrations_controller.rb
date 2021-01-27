@@ -12,8 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   end
 
-  def create
-    
-  end
+  
 
 end
