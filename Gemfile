@@ -64,3 +64,4 @@ gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
 gem 'devise_token_auth'
 gem 'dotenv-rails'
+gem "aws-sdk-s3"
