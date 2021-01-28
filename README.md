@@ -6,9 +6,11 @@
 
 ## URL
   # https://blog-app-32422.herokuapp.com/
+
 ## テスト用アカウント
   # ID admin
   # pass 2222
+
 ## 利用方法
  # user管理機能
   # トップページから新規登録する
@@ -22,6 +24,7 @@
 ## 目指した課題解決
   # google APIの実装
   # bootstrap 導入
+  
 ## 洗い出した要件
   # user管理
   # tweet管理
@@ -29,7 +32,6 @@
   # google API 管理
   # 投稿内容検索機能
   # mypage 機能
-## 実装した機能についてのGIFと説明
   
 
 ## データベース設計
