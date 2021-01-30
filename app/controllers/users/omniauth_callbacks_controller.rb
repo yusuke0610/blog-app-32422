@@ -3,9 +3,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_for(:google)
   end
   
-  # def facebook
-  #   callback_from :facebook
-  # end
+  def facebook
+    callback_from :facebook
+  end
 
   def callback_for(provider)
     @omniauth = request.env['omniauth.auth']

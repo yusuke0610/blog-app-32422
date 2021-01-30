@@ -1,8 +1,7 @@
 ## アプリケーション名
   # blog-app-32422
 ## アプリケーション概要
-  # 投稿することだけできるブログ
-  # Google API により
+  # Google API 
 
 ## URL
   # https://blog-app-32422.herokuapp.com/
