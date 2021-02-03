@@ -16,7 +16,7 @@ RSpec.describe Comment, type: :model do
    end 
 
    context 'コメントが入力されていない時' do
-     @comment.text = nil
+     @comment.commnet = nil
      binding.pry
      @commnet.valid?
      expect(@comment.errors.full_messages).to include()
